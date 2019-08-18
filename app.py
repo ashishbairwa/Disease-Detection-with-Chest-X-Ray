@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template,request
 app = Flask(__name__)
 
-from inference import get_flower_name
+from inference import get_disease_name
 
 @app.route('/',methods=['GET','POST'])
 def hello_world():
