@@ -32,11 +32,11 @@ class classifier(nn.Module):
         x = self.logsoftmax(self.fc3(x))
         return x
 
-model=models.densenet161(pretrained=True)
-model.classifier = classifier()
 
 def get_model():
     checkpoint_path='xray_projectV4_2_densenet161_mila.pt'
+    model=models.densenet161(pretrained=True)
+    model.classifier = classifier()
     model.load_state_dict(torch.load(checkpoint_path,map_location='cpu'),strict=False)
     model.eval()
     return model
