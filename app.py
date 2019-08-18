@@ -12,7 +12,7 @@ def hello_world():
 		try:
 			file=request.files['file']
 			image=file.read()
-			food_name=get_disease_name(image_bytes=image)
+			disease_name=get_disease_name(image_bytes=image)
 			return render_template('result.html',disease=disease_name)	
 		except:
 			return render_template('index.html')
