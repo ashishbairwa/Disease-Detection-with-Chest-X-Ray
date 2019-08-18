@@ -14,6 +14,7 @@ def mila(input, beta=-0.25):
     '''
     return input * torch.tanh(F.softplus(input+beta))
 
+
 class classifier(nn.Module):
     def __init__(self):
         super().__init__()
@@ -30,6 +31,8 @@ class classifier(nn.Module):
 
         x = self.logsoftmax(self.fc3(x))
         return x
+
+model=models.densenet161(pretrained=True)
 model.classifier = classifier()
 
 def get_model():
