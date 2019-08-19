@@ -1,69 +1,73 @@
-nav{
-    background-color: #00DBDE;
-    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-    display: flex;
-    flex-direction: row;
-    height: 90px;
+ .body{
+	 background-image: url(background.svg);
+     background-repeat: no-repeat;
+     background-size: 100% 100%;
+} 
+
+p2{
+    font-size: 150%;
+    font-family: roboto;
     color: white;
-    font-size: 1.3em;
-    /* background: #f34646; */
+    text-shadow: 0 0 11px #0b0b0cb5;
+}
+ 
+ .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+	
+	.container {
+	  width: auto;
+	  max-width: 680px;
+	  padding: 0 15px;
+	}
+	.footer {
+	  background-color: #343a40;
+	  color: white;
+	}
+	
+	
+	
+	h1
+	{
+		text-align: center;
+	}
+  
+  .custom-file-input{
+    margin: 20%;
+  }
+  
+  .mt-5, .my-5 {
+	color: white;
+    margin-top: 3rem!important;
+    text-shadow: 0px 2px 5px #474343;
+    padding: 8%;
 }
 
-body{
+.custom-file-input {
+    padding: 8%;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
     margin: 0;
-    padding: 0;
+    opacity: 0;
 }
 
-ul{
-    display: flex;
-    margin: auto;
-    list-style: none;
-    width: 90%;
-    justify-content: space-between;
-    background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
-    font-size: 1.2em
+nav.navbar.navbar-expand-md.bg-dark {
+    background-color: #343a404f!important;
 }
 
-a{
-    text-decoration: none;
+.footer {
+    background-color: #2e3c4952;
     color: white;
-    font-size: 1.2em;
 }
-
-.body{
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.body h2{
-    color: #73237d;
-    font-size: 2.8em;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-}
-form input{
-    margin: 20px;
-}
-form input:last-child{
-    padding: 8px 30px;
-    font-size: 1.1em;
-    background: #d71844;
-    color: white;
-    border: 0px;
-    border-radius: 30px;
-}
-
-.body img{
-    width: 121px;
-}
-.body p2{
-    color: fuchsia;
