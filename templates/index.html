@@ -13,7 +13,62 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script src="/static/styles/script.js"></script>
+	<script>
+    function checkFileDetails() {
+	    console.log("in function");
+        var fi = document.getElementById('file');
+        if (fi.files.length > 0) { 
+            //validation lol script
+            for (var i = 0; i <= fi.files.length - 1; i++) {
+                var fileName, fileExtension, fileSize, fileType, dateModified;
+                fileName = fi.files.item(i).name;
+                fileExtension = fileName.replace(/^.*\./, '');
+                if (fileExtension == 'jpg' || fileExtension == 'jpeg'||fileExtension == 'JPG') {
+                   readImageFile(fi.files.item(i));          
+                }
+                else {
+                 
+                        
+                    fileSize = fi.files.item(i).size;  
+                    fileType = fi.files.item(i).type; 
+                    dateModified = fi.files.item(i).lastModifiedDate; 
+
+                    document.getElementById('fileInfo').innerHTML =
+                        document.getElementById('fileInfo').innerHTML + '<div class="alert alert-danger" role="alert" id="warn">'+
+                            'Only Image files are allowed. Kindly provide images with .jpg and .jpeg extension'+'</div>';
+                            document.getElementById('plug').disabled=true;
+                }
+            }
+
+            function readImageFile(file) {
+                var reader = new FileReader(); 
+
+                reader.onload = function (e) {
+                    var img = new Image();      
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var w = this.width;
+                        var h = this.height;
+                        if(w<255||h<255){
+                        document.getElementById('fileInfo').innerHTML =
+                            document.getElementById('fileInfo').innerHTML + '<div class="alert alert-danger" role="alert" id="warn">' +
+                                'Provided image is not suitable for processing, Please provide an image greater than width and height 255,255'+'</div>'+'</br>';
+                                document.getElementById('plug').disabled=true;
+                        }
+                        else{
+						console.log("else triggered");
+                                    document.getElementById("plug").disabled = false;
+								    var element = document.getElementById("warn");
+                                    element.parentNode.removeChild(element);
+                        }
+                    }
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    }
+</script>
   </head>
   <body class="d-flex flex-column h-100" style="
     background-image: url('/static/styles/background.svg');
