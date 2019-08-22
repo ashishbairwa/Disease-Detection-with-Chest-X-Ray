@@ -10,14 +10,11 @@ def hello_world():
 	if request.method=='GET':
 		return render_template('index.html')
 	if request.method=='POST':
-		try:
-			file=request.files['file']
-			image=file.read()
-			call_name=get_call_name(image_bytes=image)
-			return render_template('result.html',dis=call_name)	
-		except:
-			return render_template('index.html')
-		
+		file=request.files['file']
+		image=file.read()
+		call_name=get_call_name(image_bytes=image)
+		return render_template('result.html',dis=call_name)	
+	
 
 if __name__ == '__main__':
 	app.run(debug=True,port=os.getenv('PORT',5000))
