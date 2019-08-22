@@ -3,7 +3,7 @@ import os
 from flask import Flask, render_template,request
 app = Flask(__name__)
 
-from inference import get_call_name
+from inference import get_result
 
 @app.route('/',methods=['GET','POST'])
 def hello_world():
