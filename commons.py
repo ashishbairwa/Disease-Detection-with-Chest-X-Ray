@@ -35,7 +35,7 @@ def get_model():
     return model
 
 def get_tensor(image_bytes):
-	my_transforms=transforms.Compose(['transforms.Resize(224)', 'transforms.ToTensor()'])
+	my_transforms=transforms.Compose([transforms.Resize(224), transforms.ToTensor()])
 	image=Image.open(io.BytesIO(image_bytes))
 	return my_transforms(image).unsqueeze(0)
         
