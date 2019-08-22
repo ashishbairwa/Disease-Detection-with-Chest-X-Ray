@@ -12,8 +12,8 @@ def hello_world():
 	if request.method=='POST':
 		file=request.files['file']
 		image=file.read()
-		call_name=get_call_name(image_bytes=image)
-		return render_template('result.html',dis=call_name)	
+		res_name=get_result(image_bytes=image)
+		return render_template('result.html',dis=res_name)	
 	
 
 if __name__ == '__main__':
