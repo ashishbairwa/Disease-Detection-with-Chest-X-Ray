@@ -1,0 +1,5 @@
+{
+	"name":"X-Ray Project",
+	"description":"An x-ray project to detect the diseases",
+	"keywords":["python","flask","Pytorch"]
+}
